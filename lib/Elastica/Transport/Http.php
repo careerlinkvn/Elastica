@@ -62,6 +62,7 @@ class Elastica_Transport_Http extends Elastica_Transport_Abstract
         curl_setopt($conn, CURLOPT_CUSTOMREQUEST, $request->getMethod());
         curl_setopt($conn, CURLOPT_FORBID_REUSE, 0);
         curl_setopt($conn, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($conn, CURLOPT_ENCODING, 'gzip, deflate');
 
         $this->_setupCurl($conn);
 
